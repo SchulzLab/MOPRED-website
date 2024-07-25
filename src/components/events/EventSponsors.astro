@@ -1,0 +1,31 @@
+---
+// Import built-in components
+import { Image } from "astro:assets";
+
+// Import utility functions
+import extractAllFiles from "../../utils/extractAllFiles.js";
+
+export interface Props {
+    sponsors: string;
+}
+
+const { sponsors } = Astro.props;
+
+// Extract all sponsor logos from folder
+const allFiles = await extractAllFiles(sponsors);
+---
+
+<div class="flex items-end justify-center flex-wrap gap-8">
+    {
+        allFiles.map((sponsor) => (
+            <Image
+                src={sponsor}
+                alt=""
+                width={200}
+                height={100}
+                quality={80}
+                class="w-full object-scale-down flex-[0_1_25%]"
+            />
+        ))
+    }
+</div>

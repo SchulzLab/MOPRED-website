@@ -1,0 +1,26 @@
+---
+export interface Props {
+    title: string;
+    subtitle?: string;
+}
+
+const { title, subtitle = "" } = Astro.props;
+---
+
+<section class="max-w-screen-xl md:mx-auto mb-section px-4 lg:px-0 py-4">
+    <header class="md:relative md:left-1/4 mt-4 flex flex-col items-center">
+        <h2
+            class="relative w-fit mb-subheading before:absolute before:-right-6 before:-top-5 before:w-3 before:h-12 before:mx-auto before:mb-5 sm:before:mx-0 before:rounded-lg before:bg-primary-100"
+        >
+            {title}
+        </h2>
+        <h6 class="mb-heading tracking-wider uppercase text-primary-200">
+            {subtitle}
+        </h6>
+    </header>
+    <div class="px-4 sm:px-6 lg:px-8 relative flex flex-col">
+        <div class="flex-1 space-y-8">
+            <slot />
+        </div>
+    </div>
+</section>

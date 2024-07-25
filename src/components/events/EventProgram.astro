@@ -1,0 +1,43 @@
+---
+// Import self-made components
+import Button from "../Button.astro";
+
+export interface Props {
+    title: string;
+    subtitle: string;
+    agendaFile?: string; // Path to src --> Displays download button
+}
+
+const { title, subtitle, agendaFile = null } = Astro.props;
+---
+
+<!-- Program section -->
+<section class="container max-w-screen-xl md:mx-auto mb-section px-4 lg:px-0">
+    <div class="mx-4 grid sm:grid-cols-12 sm:gap-4">
+        <div class="col-span-12 sm:col-span-3">
+            <header
+                class="text-center sm:text-left before:block before:w-24 before:h-3 before:mb-5 sm:before:mx-0 before:mx-auto before:rounded-lg before:bg-primary-100"
+            >
+                <h2 class="mb-subheading">{title}</h2>
+                <h6 class="mb-8 tracking-wider uppercase text-primary-200">
+                    {subtitle}
+                </h6>
+                <!-- Adds download button, if agenda file is provided -->
+                {
+                    agendaFile !== null ? (
+                        <Button
+                            url={agendaFile}
+                            title="Download"
+                            external={false}
+                        />
+                    ) : (
+                        ""
+                    )
+                }
+            </header>
+        </div>
+        <ul class="relative p-4 lg:p-8 col-span-12 px-4 sm:col-span-9">
+            <slot />
+        </ul>
+    </div>
+</section>

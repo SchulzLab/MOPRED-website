@@ -1,0 +1,15 @@
+---
+import Icon from "astro-iconify";
+
+const { icon, title, url } = Astro.props;
+---
+
+<a href={url} class="relative group">
+    <Icon
+        name={icon}
+        title={title}
+        width="28"
+        height="28"
+        class="w-7 h-7 relative top-0 group-hover:-top-1 transition-[top] ease duration-300"
+    />
+</a>

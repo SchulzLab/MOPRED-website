@@ -1,0 +1,12 @@
+---
+export interface Props {
+    pointTitle: string;
+}
+
+const { pointTitle } = Astro.props;
+---
+
+<div class="mb-4">
+    <h6 class="mb-1 text-lg text-primary-200">{pointTitle}</h6>
+    <slot />
+</div>

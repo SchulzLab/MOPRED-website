@@ -1,0 +1,48 @@
+---
+// Import built-in
+import { ViewTransitions } from "astro:transitions";
+
+// Import self-build components
+import Header from "../components/navigation/Header.astro";
+import Footer from "../components/navigation/Footer.astro";
+import NavigationMobile from "../components/navigation/NavigationMobile.astro";
+
+export interface Props {
+    title: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <title>{title}</title>
+        <!-- Around 150 to 160 characters -->
+        <meta name="description" content={description} />
+        <!-- Add up to 20 keywords -->
+        <meta name="keywords" content="MOPRED" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#00618F" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/favicon_128x128_light.svg"
+        />
+        <ViewTransitions />
+    </head>
+    <body class="font-mono bg-light-100 text-dark-100">
+        <article>
+            <Header />
+            <main transition:animate="fade">
+                <slot />
+            </main>
+            <Footer />
+            <NavigationMobile />
+        </article>
+        <style is:global>
+            @import "../styles/global.css";
+        </style>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+---
+// Import built-in components
+import Icon from "astro-iconify";
+import { Image } from "astro:assets";
+
+// Import self-build components
+import EventTags from "./EventTags.astro";
+import EventDateLong from "./EventDateLong.astro";
+
+export interface Props {
+    title: string;
+    tags: string[];
+    excerpt: string;
+    heroImgSrc: string;
+    heroImgAlt?: string;
+    eventStart: Date;
+    eventEnd: Date;
+    location: string;
+    organizers: string[];
+    slug: string;
+}
+
+const {
+    title,
+    tags,
+    excerpt,
+    heroImgSrc,
+    heroImgAlt = "", // Default value --> Some imgs don't need alt
+    eventStart,
+    eventEnd,
+    location,
+    organizers,
+    slug,
+} = Astro.props;
+---
+
+<section class="container max-w-screen-xl md:mx-auto mb-section px-4 lg:px-0">
+    <!-- Title -->
+    <header class="mb-heading">
+        <h1>{title}</h1>
+        <EventTags tags={tags} />
+    </header>
+
+    <!-- Hero section -->
+    <div class="grid md:grid-cols-2 gap-4 md:gap-0">
+        <div class="md:col-start-1">
+            {excerpt}
+            <div
+                class="w-fit my-highlight p-3 flex flex-col gap-2 rounded-lg shadow-md bg-accent-100"
+            >
+                <div class="flex items-center gap-4">
+                    <Icon
+                        name="fa6-regular:calendar"
+                        width={24}
+                        height={24}
+                        class="w-5 h-5 text-primary-100"
+                    />
+                    <EventDateLong
+                        eventStart={eventStart}
+                        eventEnd={eventEnd}
+                    />
+                </div>
+                <div class="flex items-center gap-4">
+                    <Icon
+                        name="fa6-solid:location-dot"
+                        width={24}
+                        height={24}
+                        class="w-5 h-5 text-primary-100"
+                    />
+                    <address>{location}</address>
+                </div>
+            </div>
+            <span class="text-xs">Organizers: </span>
+            {
+                organizers.map((organizer) => (
+                    <span class="text-xs before:content-['#'] before:text-primary-100">
+                        {organizer}
+                    </span>
+                ))
+            }
+        </div>
+        <Image
+            src={heroImgSrc}
+            alt={heroImgAlt}
+            width={900}
+            height={900}
+            quality={80}
+            class="md:w-4/5 lg:w-3/4 row-start-1 md:col-start-2 object-cover mx-auto rounded-lg"
+            loading="eager"
+        />
+    </div>
+</section>

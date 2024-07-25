@@ -1,0 +1,100 @@
+---
+// Import page layout
+import StandardPage from "../layouts/StandardPage.astro";
+
+// Import built-in components
+import { Image } from "astro:assets";
+import aboutFigure from "../assets/multimodal_data_analysis.svg"; // Import img
+
+// Import self-build components
+import AccentBackground from "../components/AccentBackground.astro";
+import PageHeader from "../components/PageHeader.astro";
+import Timeline from "../components/Timeline.astro";
+import TimelineBox from "../components/TimelineBox.astro";
+import TopicCollection from "../components/TopicCollection.astro";
+import Topic from "../components/events/Topic.astro";
+---
+
+<StandardPage title="About MOPRED">
+    <!-- Introduction -->
+    <PageHeader title="About MOPRED" subtitle="Innovate" />
+
+    <!-- Explanation -->
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 lg:px-0"
+    >
+        <p class="mb-paragraph">
+            In order for medicine to fulfill its promise of personalized
+            treatments based on a better understanding of disease biology, it is
+            crucial that computer and statistical tools are available to analyze
+            the constantly growing amount of patient data. So far, research
+            efforts in biomedical data science have primarily focused on
+            developing specialized algorithms to analyze specific types of data,
+            such as (single-cell) RNA-Seq data, functional MRI data, or data
+            from immunohistochemical stains.
+        </p>
+
+        <p class="mb-paragraph">
+            While some efforts have been made to develop integrative tools for
+            related omics data (such as single-cell RNA-seq and ATAC-seq), data
+            in modern medicine are often available from a variety of sources,
+            including clinical time series data, imaging data, text data, and/or
+            pharmacokinetic data in addition to genomic data. A comprehensive
+            characterization of patients and model organisms, crucial for the
+            advancement of personalized medicine, requires the comprehensive
+            integration of these multimodal data from available sources.
+        </p>
+
+        <p>
+            Within this consortium, we define a modality as an experimental
+            measurement on a patient/disease model organism. Depending on the
+            type of technology, this measurement can take very different digital
+            forms (e.g., image, sequencing result, proteomics, etc.). Multimodal
+            then refers to a data analysis scenario where at least two data
+            modalities need to be integrated. In particular, prediction models
+            based on multimodal data have the potential to significantly benefit
+            from the synergistic effects of a statistically informed data
+            integration strategy, which is the overarching theme of projects in
+            this initiative.
+        </p>
+    </section>
+
+    <!-- Graphical abstract -->
+    <AccentBackground>
+        <section
+            class="container max-w-screen-xl md:mx-auto mb-section px-4 lg:px-0"
+        >
+            <Image src={aboutFigure} alt="" class="md:mx-auto" />
+        </section>
+    </AccentBackground>
+
+    <!-- Goals -->
+    <TopicCollection title="3 Goals of the MOPRED Initiative">
+        <Topic icon="streamline:module-puzzle-3" topic="Integration">
+            Development of statistical and/or machine learning methods for
+            multimodal data integration for biomedical research questions
+        </Topic>
+        <Topic icon="fa6-solid:magnifying-glass-chart" topic="Characterisation">
+            Development of novel methods or algorithms for high-throughput
+            technologies that allow multimodal characterisation of relevant
+            quantities (e.g. cellular processes)
+        </Topic>
+        <Topic icon="iconamoon:trend-up" topic="Advancement">
+            Advance treatment, subtype identification or other relevant aspects
+            of predictive or personalised medicine.
+        </Topic>
+    </TopicCollection>
+
+    <!-- MOPRED timeline -->
+    <Timeline title="The MOPRED Timeline" subtitle="Where it all started...">
+        <TimelineBox timestamp="2023" title="Website Launch" left={true}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </TimelineBox>
+        <TimelineBox timestamp="2023" title="First Symposium" left={false}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </TimelineBox>
+        <TimelineBox timestamp="2023" title="First Hackathon" left={true}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </TimelineBox>
+    </Timeline>
+</StandardPage>

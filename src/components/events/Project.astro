@@ -1,0 +1,20 @@
+---
+export interface Props {
+    projectNumber: number;
+    title: string;
+}
+
+const { projectNumber, title } = Astro.props;
+---
+
+<!-- Calc calculates the top margin for every card on the stack -->
+<div
+    style=`top: calc(1rem * ${projectNumber});`
+    class="sticky w-full max-w-xl p-8 mx-auto space-y-4 bg-light-100 border rounded-lg shadow-md"
+>
+    <span class="text-sm text-primary-200">Project #{projectNumber} </span>
+    <h3 class="space-y-1 font-bold leading-none">
+        {title}
+    </h3>
+    <slot />
+</div>

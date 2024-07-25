@@ -1,0 +1,22 @@
+---
+import FooterNavbar from "./FooterNavbar.astro";
+import FooterSocials from "./FooterSocials.astro";
+---
+
+<footer
+    class="p-4 md:px-8 lg::px-16 md:pt-6 grid grid-cols-1 gap-y-6 bg-primary-100 text-light-100 text-[16px]"
+>
+    <div class="flex items-center justify-between">
+        <div class="flex flex-col gap-2">
+            <span class="mb-2 text-[1em] md:text-[1.5em]">Follow Us!</span>
+            <FooterSocials />
+        </div>
+        <nav>
+            <FooterNavbar />
+        </nav>
+    </div>
+    <span
+        class="row-start-2 row-span-1 text-center text-[0.7em] md:text-[1em] lg:text-[1.3em]"
+        >© 2023 MOPRED, All rights reserved.</span
+    >
+</footer>

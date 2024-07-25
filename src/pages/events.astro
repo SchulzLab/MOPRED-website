@@ -1,0 +1,34 @@
+---
+import PageHeader from "../components/PageHeader.astro";
+import StandardPage from "../layouts/StandardPage.astro";
+import { sortByDate } from "../utils/sortByDate.js";
+import getAllCollections from "../utils/getAllCollections.js";
+import EventDisplayCompressed from "../components/EventDisplayCompressed.astro";
+
+const collections = ["symposia", "hackathons"];
+const allEvents = await getAllCollections(collections);
+---
+
+<StandardPage title="Events">
+    <!-- Introduction -->
+    <PageHeader title="Events" subtitle="Explore" withIntro={true}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
+        dolores eos doloremque nesciunt velit repudiandae quae officiis
+        mollitia, labore saepe repellendus ratione unde similique ab dolore ut!
+        Laudantium, veniam cumque.
+    </PageHeader>
+
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-navigation px-4 lg:px-0"
+    >
+        <div class="grid md:grid-cols-3 gap-8">
+            {
+                allEvents
+                    .sort(sortByDate)
+                    .map((eventEntry) => (
+                        <EventDisplayCompressed eventEntry={eventEntry} />
+                    ))
+            }
+        </div>
+    </section>
+</StandardPage>

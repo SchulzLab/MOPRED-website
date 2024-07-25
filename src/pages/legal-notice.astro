@@ -1,0 +1,187 @@
+---
+// Import page layout
+import StandardPage from "../layouts/StandardPage.astro";
+
+// Import self-build components
+import HighlightPoint from "../components/HighlightPoint.astro";
+---
+
+<StandardPage title="Legal Notice">
+    <header class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <h1 class="mb-subheading">Impressum</h1>
+        <span>Angaben nach § 5 TMG</span>
+    </header>
+
+    <!-- Provider -->
+    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <h2 class="mb-heading">Diensteanbieter</h2>
+
+        <ul class="mb-8 list-none">
+            <li class="mb-2">Johann Wolfgang Goethe-Universität Frankfurt</li>
+            <li class="mb-2"><address>Theodor-W.-Adorno-Platz 1</address></li>
+            <li><address>60323 Frankfurt am Main</address></li>
+        </ul>
+
+        <div class="mb-8">
+            <HighlightPoint pointTitle="Postanschrift">
+                <address>
+                    Goethe-Universität Frankfurt am Main 60629 Frankfurt
+                </address>
+            </HighlightPoint>
+
+            <HighlightPoint pointTitle="Telefon">
+                <div>
+                    <ul class="list-none">
+                        <li class="">
+                            <a href="tel:+49-69-798-0">+49-69-798-0</a>
+                        </li>
+                        <li>
+                            Fax: <a href="tel:+49-69-798-18383"
+                                >+49-69-798-18383</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </HighlightPoint>
+
+            <HighlightPoint pointTitle="Internet">
+                <a href="www.uni-frankfurt.de"> www.uni-frankfurt.de </a>
+            </HighlightPoint>
+        </div>
+
+        <div class="mb-8">
+            <div class="mb-paragraph">
+                <em>
+                    Die Goethe-Universität Frankfurt am Main ist als Hochschule
+                    des Landes Hessen eine rechtsfähige Stiftung des
+                    öffentlichen Rechts (§ 88 HessHG).
+                </em>
+            </div>
+
+            <HighlightPoint pointTitle="Gesetzlicher Vertreter">
+                <span>
+                    Der Präsident der Goethe-Universität, Prof. Dr. Enrico
+                    Schleiff
+                </span>
+            </HighlightPoint>
+
+            <HighlightPoint pointTitle="Rechtsaufsicht">
+                <div>
+                    Hessisches Ministerium für Wissenschaft und Kunst,
+                    <address>Rheinstr. 23-25, 65185 Wiesbaden.</address>
+                </div>
+            </HighlightPoint>
+
+            <HighlightPoint pointTitle="Gerichtsstand">
+                <span>Frankfurt am Main</span>
+            </HighlightPoint>
+
+            <HighlightPoint
+                pointTitle="Umsatzsteuer-Identifikationsnummer (USt-IdNr.)"
+            >
+                <span>DE 114 110 511</span>
+            </HighlightPoint>
+
+            <HighlightPoint pointTitle="Steuernummer">
+                <span>04 522 658 002</span>
+            </HighlightPoint>
+        </div>
+
+        <div>
+            <p class="mb-paragraph">
+                Die Programminhalte werden von uns elektronisch erstellt und
+                manuell überarbeitet. Für eventuelle Abweichungen von
+                Originaltexten übernehmen wir keine Haftung. Anregungen, um
+                welche Inhalte unser Informationsangebot erweitert werden kann,
+                sowie Hinweise auf zu korrigierende Fehler bitten wir an
+                folgende Adresse zu übersenden.
+            </p>
+            <span class="text-primary-100">webmaster@uni-frankfurt.de</span>
+        </div>
+    </section>
+
+    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <h2 class="mb-heading">© Copyright</h2>
+
+        <p>
+            Für die WWW- bzw. Internet-Seiten der Goethe-Universität liegen
+            Copyright und alle weiteren Rechte für Inhalt und Gestaltung bei dem
+            Präsidenten der Goethe-Universität. Die Weiterverbreitung von
+            Inhalten, auch in Auszügen, für pädagogische, wissenschaftliche oder
+            private Zwecke ist unter Angabe der Quelle gestattet, sofern an der
+            entsprechenden Stelle nicht ausdrücklich anderes angegeben ist. Eine
+            Nutzung des Layouts und des von nps generierten HTML-Quelltextes,
+            auch in abgewandelter Form, bedarf, ebenso wie jegliche Nutzung der
+            WWW- bzw. Internet-Seiten im gewerblichen Bereich, der schriftlichen
+            Genehmigung durch den Präsidenten der Goethe-Universität.
+        </p>
+    </section>
+
+    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <h2 class="mb-heading">Haftungshinweis / Disclaimer</h2>
+
+        <p>
+            Die Goethe-Universität ist als Inhaltsanbieter für die "eigenen
+            Inhalte", die sie zur Nutzung bereithält, nach den allgemeinen
+            Gesetzen verantwortlich. Dieses Impressum gilt für die zentralen
+            Informationsangebote der Zentralverwaltung und der zentralen
+            Einrichtungen der Goethe-Universität im WWW, die durch den Vermerk
+            „© Goethe-Universität" gekennzeichnet sind und über die URL
+            http://www.uni-frankfurt.de erreichbar sind. Die Goethe-Universität
+            übernimmt keine Gewähr für deren Vollständigkeit oder Eignung für
+            bestimmte Verwendungszwecke. Die Nutzung der auf den Internetseiten
+            zur Verfügung gestellten Inhalte erfolgt auf alleinige Gefahr des
+            Benutzers/der Benutzerin.
+        </p>
+    </section>
+
+    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <h2 class="mb-heading">Hinweis zur Problematik von externen Links</h2>
+
+        <p>
+            Von diesen eigenen Inhalten sind Querverweise ("Links") auf die von
+            den übrigen Einrichtungen der Universität sowie anderen Anbietern
+            bereitgehaltenen Inhalte zu unterscheiden. Bei "Links" handelt es
+            sich stets um "lebende" (dynamische) Verweisungen. Die Webredaktion
+            der Goethe-Universität hat bei der erstmaligen Verknüpfung zwar den
+            fremden Inhalt daraufhin überprüft, ob durch ihn eine mögliche
+            zivilrechtliche oder strafrechtliche Verantwortlichkeit ausgelöst
+            wird. Sie überprüft aber die Inhalte, auf die im zentralen
+            Informationsangebote der Zentralverwaltung der Goethe-Universität im
+            WWW verwiesen wird, nicht ständig auf Veränderungen, die eine
+            Verantwortlichkeit neu begründen könnten. Wenn sie feststellt oder
+            von anderen darauf hingewiesen wird, dass ein konkretes Angebot, zu
+            dem sie einen Link bereitgestellt hat, eine zivil- oder
+            strafrechtliche Verantwortlichkeit auslöst, wird sie den Verweis auf
+            dieses Angebot aufheben.
+        </p>
+
+        <p>
+            Trotz sorgfältiger inhaltlicher Kontrolle wird keine Haftung für die
+            Inhalte externer Links übernommen. Für den Inhalt verlinkter Seiten
+            sind ausschließlich deren Betreiber verantwortlich. Das Landgericht
+            Hamburg hat mit seinem Urteil vom 12.05.1998 "Haftung für Links"
+            (312 O 85/98) entschieden, dass man durch das Anbringen eines Links
+            die Inhalte der "gelinkten" Seite ggf. mit zu verantworten hat,
+            mithin haftbar gemacht werden kann. Dies kann man dadurch
+            verhindern, indem man sich von diesen Inhalten nachdrücklich
+            distanziert. Vor diesem Hintergrund distanziert sich
+            die&xnbsp;Goethe-Universität hiermit vorsorglich und ausdrücklich
+            von allen Inhalten sämtlicher gelinkter Seiten auf seinen
+            Internetseiten. Sie hat weder Einfluss auf die Gestaltung und die
+            Inhalte der gelinkten Seiten noch hat sie sich diese Inhalte zu
+            eigen gemacht. Diese Erklärung gilt für sämtliche Links und
+            Link-Sammlungen, die zur Zeit bestehen oder in Zukunft bestehen
+            werden.
+        </p>
+    </section>
+
+    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <h2 class="mb-heading">Speicherung von Zugriffsdaten</h2>
+        <p>
+            Bei Anforderung von Daten aus dem zentralen Informationsangebot der
+            Zentralverwaltung der Goethe-Universität im WWW werden keine
+            Zugriffsdaten gespeichert.
+        </p>
+    </section>
+</StandardPage>

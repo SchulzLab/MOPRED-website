@@ -1,0 +1,27 @@
+---
+export interface Props {
+    title: string;
+    subtitle: string;
+    withIntro?: boolean;
+}
+
+const { title, subtitle, withIntro = false } = Astro.props;
+---
+
+<section
+    class="container max-w-screen-xl md:mx-auto px-4 lg:px-0 flex flex-col items-start md:items-end justify-center md:text-right"
+>
+    <header>
+        <h4 class="mb-subheading text-primary-200 uppercase">{subtitle}</h4>
+        <h1 class="mb-heading">{title}</h1>
+        {
+            withIntro ? (
+                <div class="mb-section">
+                    <slot />
+                </div>
+            ) : (
+                ""
+            )
+        }
+    </header>
+</section>

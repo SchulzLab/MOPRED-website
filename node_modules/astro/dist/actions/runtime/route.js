@@ -1,0 +1,37 @@
+import { ApiContextStorage } from "./store.js";
+import { formContentTypes, getAction, hasContentType } from "./utils.js";
+import { callSafely } from "./virtual/shared.js";
+const POST = async (context) => {
+  const { request, url } = context;
+  const actionPathKeys = url.pathname.replace("/_actions/", "").split(".");
+  const action = await getAction(actionPathKeys);
+  const contentType = request.headers.get("Content-Type");
+  let args;
+  if (contentType && hasContentType(contentType, formContentTypes)) {
+    args = await request.clone().formData();
+  } else if (contentType && hasContentType(contentType, ["application/json"])) {
+    args = await request.clone().json();
+  } else {
+    return new Response(null, { status: 415 });
+  }
+  const result = await ApiContextStorage.run(context, () => callSafely(() => action(args)));
+  if (result.error) {
+    if (import.meta.env.PROD) {
+      result.error.stack = void 0;
+    }
+    return new Response(JSON.stringify(result.error), {
+      status: result.error.status,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+  }
+  return new Response(JSON.stringify(result.data), {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+};
+export {
+  POST
+};

@@ -1,0 +1,25 @@
+---
+// Props typing
+export interface Props {
+    tags: string[];
+    margin?: boolean;
+}
+
+const { tags, margin } = Astro.props;
+---
+
+{
+    margin ? (
+        <div class="mt-2 mb-4">
+            {tags.map((tag) => (
+                <span class="event-tag mr-2">{tag}</span>
+            ))}
+        </div>
+    ) : (
+        <div class="mt-2">
+            {tags.map((tag) => (
+                <span class="event-tag mr-2">{tag}</span>
+            ))}
+        </div>
+    )
+}

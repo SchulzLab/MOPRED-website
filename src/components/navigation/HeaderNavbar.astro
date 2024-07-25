@@ -1,0 +1,14 @@
+---
+import NavbarLink from "./NavbarLink.astro";
+
+const path_name = new URL(Astro.request.url).pathname;
+const current_path = path_name.split("/");
+---
+
+<nav
+  class="md:mx-2 md:flex items-center justify-center gap-4 lg:gap-8 text-[1em] md:text-[2em] lg:text-[2.5em]"
+>
+  <NavbarLink title="Home" url="" current_path={current_path[1]} />
+  <NavbarLink title="Events" url="events" current_path={current_path[1]} />
+  <NavbarLink title="About MOPRED" url="about" current_path={current_path[1]} />
+</nav>

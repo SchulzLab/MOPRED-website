@@ -1,0 +1,95 @@
+---
+draft: false
+layout: ../../layouts/EventPage.astro
+publishedDate: 2023-09-22
+eventType: symposium
+eventStart: 2023-10-10 10:00:00
+eventEnd: 2023-10-10 18:00:00
+eventLocation: Frankfurt University Hospital - Building 22
+title: MOPRED Symposium - Multimodal Data Analysis
+excerpt: The symposium will gather scientists from various disciplines in the Rhein-Main area to explore advanced methods for integrating multi-modal data in predictive medicine, featuring lectures, a poster session, and a keynote by Prof. Dr. Nico Pfeifer from the University of Tübingen.
+topics: [Representation Learning, Graph Neural Networks, Mechanistic Models, Statistical Approaches]
+keynotes: [[Prof. Dr. Nico Pfeifer, University of Tuebingen]]
+organizers: [Florian Buettner, Marcel Schulz]
+tags: [Symposium, Multimodal, AI, ML]
+thumbnail:
+  src: /symposia/symposium_10-10-2023/thumbnail.jpg
+  alt: ""
+registration:
+  registrationDeadline: 2023-09-08 23:59:00
+  registrationURL: ""
+  abstractDeadline: 2023-09-15 23:59:00
+  selectionCommitee: [Andreas Chiocchetti, Florian Buettner, Nadine Flinner, Katharina Imkeller, Marcel Schulz]
+sponsors: public/symposia/symposium_10-10-2023/sponsors/
+---
+
+{/* Component imports */}
+import EventHero from "../../components/events/EventHero.astro"
+import EventProgram from "../../components/events/EventProgram.astro"
+import EventProgramPoint from "../../components/events/EventProgramPoint.astro"
+import EventProgramHeading from "../../components/events/EventProgramHeading.astro"
+import EventTopicCollection from "../../components/events/EventTopicCollection.astro"
+import Topic from "../../components/events/Topic.astro"
+import KeynoteCollection from "../../components/events/KeynoteCollection.astro"
+import Keynote from "../../components/events/Keynote.astro"
+import Registration from "../../components/events/SymposiumRegistration.astro"
+
+<EventHero 
+  title={frontmatter.title} 
+  tags={frontmatter.tags} 
+  excerpt={frontmatter.excerpt} 
+  heroImgSrc={frontmatter.thumbnail.src} 
+  eventStart={frontmatter.eventStart}
+  eventEnd={frontmatter.eventEnd}
+  location={frontmatter.eventLocation}
+  organizers={frontmatter.organizers}
+/>
+
+<EventProgram title="Program" subtitle="Preliminary Overview" agendaFile="/public/symposia/symposium_10-10-2023/MOPRED_Symposium_Agenda.pdf">
+  <EventProgramPoint title="Welcome" timeframe="10:00">
+    Welcome and opening remarks Marcel Schulz and Florian Buettner
+  </EventProgramPoint>
+  <EventProgramHeading title="Pathways and Gene Functions" />
+  <EventProgramPoint timeframe="10:10" title="Scientific Talks">
+    **Talks from:** Andreas Chiocchetti, Katharina Imkeller, Thomas Oellerich, Ingo Ebersberger, Lena Wiese, Timothy Warwick, Sareh Ameri Far, Nina Baumgarten
+  </EventProgramPoint>
+  <EventProgramPoint timeframe="11:55" title="Group Photo" />
+  <EventProgramPoint timeframe="12:05" title="Lunch Break" />
+  <EventProgramHeading title="ML Methods for Mulit-modal Integration" />
+  <EventProgramPoint timeframe="13:00" title="Scientific Talks">
+    **Talks from:** Maren Wehrheim, Arber Qoku, Marcel Schulz, Sikander Hayat, Zahra Moslehi, Kevin de Azevedo, Fatemeh Behjati, **Nico Pfeifer**
+  </EventProgramPoint>
+  <EventProgramPoint timeframe="15:00" title="Poster Session and Coffee" />
+  <EventProgramHeading title="Applications in Disease" />
+  <EventProgramPoint timeframe="16:30" title="Scientific Talks">
+    **Talks from:** Eva herrmann, Nadine Flinner, Christel Kamp, Ramachandra M Bhaskara, Kathi Zarnack
+  </EventProgramPoint>
+  <EventProgramPoint timeframe="17:30" title="End" />
+</EventProgram>
+
+<KeynoteCollection title="Keynote Speakers" subtitle="Exciting Insides">
+  <Keynote cardImgSrc="/symposia/symposium_10-10-2023/keynote_nico_pfeifer.jpg" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
+</KeynoteCollection>
+
+<EventTopicCollection title="Topics" subtitle="Relevant Key Concepts">
+  <Topic icon="iconoir:learning" topic="Representation Learning">
+    Representation learning automates feature extraction from raw data, enhancing model performance in tasks like natural language processing and computer vision.
+  </Topic>
+  <Topic icon="ph:graph" topic="Graph Neural Networks">
+    Graph Neural Networks (GNNs) leverage relationships in graph-structured data to improve tasks like node classification and link prediction by updating node representations based on their neighbors.
+  </Topic>
+  <Topic icon="fa:gears" topic="Mechanistic Models">
+    Mechanistic models describe system behaviors based on fundamental principles, simulating complex dynamics for fields like epidemiology and engineering.
+  </Topic>
+  <Topic icon="foundation:graph-bar" topic="Statistical Approaches">
+    Statistical approaches use mathematical methods to analyze data, making inferences and predictions to uncover patterns and inform decision-making.
+  </Topic>
+</EventTopicCollection>
+
+<Registration 
+  regUntil={frontmatter.registration.registrationDeadline} 
+  regUrl={frontmatter.registration.registrationURL}
+  notifUntil={frontmatter.registration.abstractDeadline} 
+  commitee={frontmatter.registration.selectionCommitee}
+  sponsors={frontmatter.sponsors}
+/>

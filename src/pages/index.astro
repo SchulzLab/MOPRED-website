@@ -1,0 +1,130 @@
+---
+import HomePage from "../layouts/HomePage.astro";
+
+import Button from "../components/Button.astro";
+import EventDisplayHighlight from "../components/EventDisplayHighlight.astro";
+import LogoTopic from "../components/LogoTopic.astro";
+
+import { Image } from "astro:assets"; // Look at Picture property when going for responsive
+import heroImage from "../assets/abstract_network.jpg";
+import AccentBackground from "../components/AccentBackground.astro";
+
+import { sortByDate } from "../utils/sortByDate.js";
+import getAllCollections from "../utils/getAllCollections";
+
+const collections = ["symposia", "hackathons"];
+const allEvents = await getAllCollections(collections);
+---
+
+<HomePage title="Home">
+    <!-- Hero section -->
+    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <header
+            class="flex flex-col items-start md:items-end justify-center md:text-right"
+        >
+            <h4 class="mb-subheading text-primary-200 uppercase">Progress</h4>
+            <h1 class="mb-heading">
+                <span
+                    id="typewriter"
+                    class="before:content-['#'] before:text-primary-100"
+                >
+                    Advancing
+                </span>
+                <br /> Medical Technology
+            </h1>
+            <p class="mb-paragraph">
+                <em class="text-primary-200">MOPRED</em> aims to bring multimodal
+                predictive modeling to the field of medicine. It aims to revolutionize
+                the medical sciences by applying AI and machine learning to multimodal
+                data processing.
+            </p>
+            <Button url="about" title="Learn More" external={false} />
+        </header>
+        <Image
+            src={heroImage}
+            alt=""
+            quality={80}
+            class="mt-highlight w-full max-h-80 md:max-h-60 xl:max-h-60 object-cover rounded-lg"
+        />
+    </section>
+
+    <!-- Event overview -->
+    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+        <div class="grid grid-cols-1 place-items-center gap-12">
+            {
+                allEvents
+                    .sort(sortByDate)
+                    .slice(0, 3)
+                    .map((eventEntry) => (
+                        <EventDisplayHighlight eventEntry={eventEntry} />
+                    ))
+            }
+        </div>
+    </section>
+
+    <!-- Join MOPRED call to action -->
+    <div
+        class="container max-w-screen-xl md:mx-auto px-4 flex flex-col items-end justify-center"
+    >
+        <h6>Discover the Future of</h6>
+        <h4 class="mb-subheading">Medical AI</h4>
+    </div>
+    <AccentBackground>
+        <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+            <div
+                class="py-4 lg:py-8 flex flex-col lg:flex-row-reverse items-center justify-between md:justify-center gap-8"
+            >
+                <Image
+                    src="/logo_horizontal_300x140.svg"
+                    alt=""
+                    width={600}
+                    height={280}
+                    class="w-full md:w-3/4"
+                />
+                <div
+                    class="flex flex-col md:flex-row lg:flex-col items-center md:items-end xl:items-center justify-center gap-4 lg:gap-12"
+                >
+                    <div class="md:w-2/3 font-bold text-4xl text-center">
+                        Join our community today!
+                    </div>
+                    <Button url="" title="Join Now" external={true} />
+                </div>
+            </div>
+        </section>
+    </AccentBackground>
+
+    <!-- Topics section -->
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-navigation px-4 flex flex-col items-center justify-center"
+    >
+        <LogoTopic
+            icon="ic:outline-lightbulb"
+            title="Empowering Medical Innovations"
+            >We organize symposia, hackathons, and lecture series to foster
+            collaboration and knowledge sharing in the field of multimodal data
+            processing. Our events bring together experts, researchers, and
+            industry professionals to explore the latest advancements in AI and
+            machine learning applied to healthcare.</LogoTopic
+        >
+        <div class="w-1/2 border-t-2 border-dark-100 my-4 md:hidden">
+            &nbsp;
+        </div>
+        <LogoTopic icon="charm:rocket" title="Driving Medical Innovation"
+            >Through our symposia, hackathons, and lecture series, we create a
+            platform for collaborative learning. Participants have the
+            opportunity to engage with leading experts, gain insights into
+            cutting-edge research, and network with like-minded professionals.</LogoTopic
+        >
+        <div class="w-1/2 border-t-2 border-dark-100 my-4 md:hidden">
+            &nbsp;
+        </div>
+        <LogoTopic
+            icon="material-symbols:groups"
+            title="Collaborative Learning Opportunities"
+            >Our symposia, hackathons, and lecture series are designed to drive
+            medical innovation. By bringing together diverse perspectives and
+            expertise, we aim to inspire breakthroughs in AI and machine
+            learning that can revolutionize healthcare.</LogoTopic
+        >
+    </section>
+</HomePage>

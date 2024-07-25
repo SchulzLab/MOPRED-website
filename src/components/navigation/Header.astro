@@ -1,0 +1,24 @@
+---
+import Navbar from "./HeaderNavbar.astro";
+
+import { Image } from "astro:assets";
+---
+
+<header
+    class="mb-navigation p-2 md:py-4 lg:px-8 flex items-center justify-center md:justify-between bg-primary-100 text-light-100 text-[16px]"
+>
+    <a href="/" class="min-w-48 flex justify-center items-center">
+        <Image
+            src={"/logo_160x50_bg_dark.svg"}
+            alt="MOPRED Logo - Link to homepage"
+            width="160"
+            height="50"
+            quality={80}
+            class="w-2/3 lg:w-full hover:opacity-80"
+            loading="eager"
+        />
+    </a>
+    <div class="hidden md:block">
+        <Navbar />
+    </div>
+</header>

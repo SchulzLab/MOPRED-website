@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+
+import EventTags from "./events/EventTags.astro";
+
+const { eventEntry } = Astro.props;
+---
+
+<div class="h-fit grid grid-cols-1 gap-4">
+    <div class="row-start-1 row-span-2">
+        <a href={`/events/${eventEntry.slug}`}>
+            <Image
+                src={eventEntry.data.thumbnail.src}
+                alt={eventEntry.data.thumbnail.alt}
+                quality={80}
+                width={900}
+                height={900}
+                class="object-cover rounded-lg w-2/3 md:w-full"
+                transition:name=`event-${eventEntry.slug}`
+            />
+        </a>
+    </div>
+    <div class="row-start-3 row-span-1">
+        <h4>
+            {
+                `${eventEntry.data.eventStart.getDate()}.${eventEntry.data.eventStart.getMonth() + 1}.${eventEntry.data.eventStart.getFullYear()}`
+            }
+        </h4>
+    </div>
+    <div class="row-start-4 row-span-1">
+        <a href={`/events/${eventEntry.slug}`}>
+            <h1>{eventEntry.data.title}</h1>
+        </a>
+        <EventTags tags={eventEntry.data.tags} margin={true} />
+    </div>
+</div>

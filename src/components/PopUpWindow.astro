@@ -1,0 +1,18 @@
+---
+// Import third-party components
+import Icon from "astro-iconify";
+---
+
+<dialog
+    id="popup"
+    class="max-w-[80vw] p-4 rounded-lg bg-light-100 text-dark-100 border-4 border-primary-200"
+>
+    <slot />
+    <span class="sr-only">Close info</span>
+    <button
+        onclick="window.popup.close()"
+        class="absolute right-0 top-0 m-2 inline-flex items-center justify-center rounded-md text-primary-100 hover:opacity-80"
+    >
+        <Icon name="ic:round-close" width={24} height={24} class="w-6 h-6" />
+    </button>
+</dialog>

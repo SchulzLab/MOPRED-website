@@ -1,0 +1,27 @@
+---
+// Import third-party components
+import Icon from "astro-iconify";
+
+export interface Props {
+    icon: string;
+    topic: string;
+}
+
+const { icon, topic } = Astro.props;
+---
+
+<!-- One topic -->
+<div
+    class="p-4 flex flex-col flex-[0_0_40%] items-start border-2 border-primary-100 rounded-lg shadow-md"
+>
+    <Icon
+        name={icon}
+        width="24"
+        height="24"
+        class="w-12 h-12 ml-4 text-primary-200"
+    />
+    <h3 class="my-3">{topic}</h3>
+    <div class="space-y-1 leading-tight">
+        <slot />
+    </div>
+</div>

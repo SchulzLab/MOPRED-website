@@ -1,0 +1,35 @@
+---
+// Import function from utils
+import compareDates from "../../utils/compareDates.js";
+
+export interface Props {
+    eventStart: Date;
+    eventEnd: Date;
+}
+
+const { eventStart, eventEnd } = Astro.props;
+
+// Convert to correct date format
+const startDate = new Date(eventStart).toLocaleDateString("de-DE");
+const endDate = new Date(eventEnd).toLocaleDateString("de-DE");
+
+// Convert to correct time format
+const startTime = new Date(eventStart).toLocaleTimeString("de-De", {
+    timeZone: "UTC",
+    hour: "2-digit",
+    minute: "2-digit",
+});
+const endTime = new Date(eventEnd).toLocaleTimeString("de-De", {
+    timeZone: "UTC",
+    hour: "2-digit",
+    minute: "2-digit",
+});
+---
+
+{
+    compareDates(startDate, endDate) ? (
+        <h6>{`${startDate} @ ${startTime} - ${endTime}`}</h6>
+    ) : (
+        <h6>{`${startDate} @ ${startTime} - ${endDate} @ ${endTime}`}</h6>
+    )
+}

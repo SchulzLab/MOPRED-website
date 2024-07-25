@@ -1,0 +1,37 @@
+---
+// Import third-party components
+import { Icon } from "astro-iconify";
+
+export interface Props {
+    url: string;
+    title: string;
+    external: boolean;
+}
+
+const { url, title, external } = Astro.props;
+---
+
+<a
+    href={url}
+    target={external ? "_blank" : undefined}
+    class="w-fit mb-4 px-6 py-2 inline-flex items-center rounded bg-primary-300 text-dark-100 shadow-md hover:bg-primary-100 hover:text-light-100 transform active:scale-90 transition-transform"
+>
+    <span class="font-bold">{title}</span>
+    {
+        external ? (
+            <Icon
+                name="ph:arrow-square-out"
+                width="24"
+                height="24"
+                class="ml-2"
+            />
+        ) : (
+            <Icon
+                name="fa6-solid:arrow-right"
+                width="24"
+                height="24"
+                class="ml-2"
+            />
+        )
+    }
+</a>

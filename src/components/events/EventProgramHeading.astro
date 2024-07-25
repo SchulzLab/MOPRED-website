@@ -1,0 +1,22 @@
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!-- Program section heading -->
+<li class="grid px-4 md:grid-cols-6 xl:grid-cols-12 gap-2 overflow-hidden">
+    <!-- Empty element to achieve correct positioning -->
+    <span
+        class="hidden md:block row-start-1 md:col-start-1 xl:col-span-2 text-xl text-accent-200"
+    >
+        &nbsp;
+    </span>
+    <h6
+        class="md:ml-0 md:col-start-2 md:col-span-4 xl:col-start-3 xl:col-span-9 text-base"
+    >
+        {title}
+    </h6>
+</li>

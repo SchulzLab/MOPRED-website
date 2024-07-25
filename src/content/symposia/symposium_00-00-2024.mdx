@@ -1,0 +1,38 @@
+---
+draft: true
+layout: ../../layouts/EventPage.astro
+publishedDate: 2024-00-00
+eventType: symposium
+eventStart: 2024-00-00 10:00:00
+eventEnd: 2024-00-00 18:00:00
+eventLocation: ""
+title: MOPRED Symposium
+excerpt: ""
+topics: [""]
+keynotes: []
+organizers: [Florian Buettner, Marcel Schulz]
+tags: [Symposium]
+thumbnail:
+  src: /symposia/symposium_10-10-2023/thumbnail.jpg
+  alt: ""
+registration:
+  registrationDeadline: 2024-00-00 23:59:00
+  registrationURL: ""
+  abstractDeadline: 2024-00-00 23:59:00
+  selectionCommitee: []
+sponsors: ""
+---
+
+{/* Component imports */}
+import EventHero from "../../components/events/EventHero.astro"
+
+<EventHero 
+  title={frontmatter.title} 
+  tags={frontmatter.tags} 
+  excerpt={frontmatter.excerpt} 
+  heroImgSrc={frontmatter.thumbnail.src} 
+  eventStart={frontmatter.eventStart}
+  eventEnd={frontmatter.eventEnd}
+  location={frontmatter.eventLocation}
+  organizers={frontmatter.organizers}
+/>

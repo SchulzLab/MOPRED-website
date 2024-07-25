@@ -1,0 +1,27 @@
+---
+export interface Props {
+    title: string;
+    subtitle?: string;
+}
+
+const { title, subtitle = "" } = Astro.props;
+---
+
+<!-- Section that displays a number of topics -->
+<section class="container max-w-screen-xl md:mx-auto mb-section px-4 lg:px-0">
+    <div class="p-4 flex flex-col items-center">
+        <div>
+            <h2
+                class="relative w-fit mb-subheading before:absolute before:-left-10 before:w-3 before:h-16 before:mx-auto before:mb-5 sm:before:mx-0 before:rounded-lg before:bg-primary-100"
+            >
+                {title}
+            </h2>
+            <h6 class="mb-heading tracking-wider uppercase text-primary-200">
+                {subtitle}
+            </h6>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row md:flex-wrap justify-center gap-4">
+        <slot />
+    </div>
+</section>

@@ -1,0 +1,43 @@
+---
+import Icon from "astro-iconify";
+
+const { icon, title } = Astro.props;
+---
+
+<div
+    class="mb-12 flex flex-col items-center sm:items-start justify-center gap-4"
+>
+    <div class="px-4 flex items-center justify-center gap-4 md:gap-8">
+        <div class="drop-shadow-lg">
+            <div
+                class="w-16 h-20 lg:w-20 lg:h-24 relative hexagon flex items-center justify-center bg-primary-200 filter z-10"
+            >
+                <Icon
+                    name={icon}
+                    width="24"
+                    height="24"
+                    class="relative z-20 w-2/3 h-2/3"
+                />
+            </div>
+            <div
+                class="w-12 h-16 lg:w-16 lg:h-20 absolute hexagon -top-[15%] left-[25%] bg-primary-300"
+            >
+                &nbsp;
+            </div>
+            <div
+                class="w-10 h-12 lg:w-12 lg:h-16 absolute hexagon top-[5%] left-[55%] bg-primary-100"
+            >
+                &nbsp;
+            </div>
+        </div>
+        <div
+            class="hidden md:block md:h-12 md:border-l-2 md:border-dark-100 md:mx-2"
+        >
+            &nbsp;
+        </div>
+        <h2 class="text-center sm:text-left">{title}</h2>
+    </div>
+    <p>
+        <slot />
+    </p>
+</div>

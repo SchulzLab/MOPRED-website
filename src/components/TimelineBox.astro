@@ -1,0 +1,51 @@
+---
+export interface Props {
+    timestamp: string;
+    title: string;
+    left: boolean;
+}
+
+const { timestamp, title, left } = Astro.props;
+---
+
+{
+    left ? (
+        // Box on the left side
+        <div class="flex flex-row-reverse md:contents">
+            <div class="bg-primary-100 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                <header>
+                    <h6 class="mb-subheading">{timestamp}</h6>
+                    <h3 class="font-semibold mb-4">{title}</h3>
+                </header>
+                <p class="leading-tight text-justify">
+                    <slot />
+                </p>
+            </div>
+            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                <div class="h-full w-6 flex items-center justify-center">
+                    <div class="h-full w-1 bg-accent-200 pointer-events-none" />
+                </div>
+                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-primary-100 shadow" />
+            </div>
+        </div>
+    ) : (
+        // Box on the right side
+        <div class="flex md:contents">
+            <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                <div class="h-full w-6 flex items-center justify-center">
+                    <div class="h-full w-1 bg-accent-200 pointer-events-none" />
+                </div>
+                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-primary-100 shadow" />
+            </div>
+            <div class="bg-primary-100 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                <header>
+                    <h6 class="mb-subheading">{timestamp}</h6>
+                    <h3 class="font-semibold mb-4">{title}</h3>
+                </header>
+                <p class="leading-tight text-justify">
+                    <slot />
+                </p>
+            </div>
+        </div>
+    )
+}

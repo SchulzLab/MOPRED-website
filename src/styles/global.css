@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Font size variables */
+        --font-size-root: 16px;
+        --heading-scaling-min: 1.125rem;
+        --heading-scaling-max: 1.250rem;
+
+        /* Color theme variables */
+        /* For rgb(x y z / <alpha-value>) */
+        --color-primary-100: 0 97 143;
+        --color-primary-200: 75 142 192;
+        --color-primary-300: 179 241 255;
+        --color-accent-100: 230 242 248;
+        --color-accent-200: 132 143 149;
+        --color-light-100: 255 255 255;
+        --color-light-200: 245 245 245;
+        --color-dark-100: 0 0 0;
+        --color-dark-200: 95 95 95;
+
+        /* Margin variables */
+        --margin-navigation: 3rem;
+        --margin-heading: 2rem;
+        --margin-subheading: 0.5rem;
+        --margin-paragraph: 1.250rem;
+        --margin-section: 4rem;
+        --margin-highlight: 1.5rem;
+    }
+
+    * {
+        @apply box-border
+    }
+
+    /* Standard font size - Older browsers */
+    html {
+        /* Root font size */
+        font-size: var(--font-size-root);
+    }
+
+    /* Fluid font size - Modern browsers */
+    /* Viewports: 400px - 1280px */
+    /* Font size range: 16px - 24px */
+    /* Line height range: 1.3 - 0.9 */
+    @media screen and (min-width: 25rem) {
+        html {
+            font-size: clamp(1rem, 0.909vw + 0.773rem, 1.5rem);
+            line-height: clamp(1.3rem, 0.091vw + 1.277rem, 1.35rem);
+        }
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: clamp(1.625rem, 1.477vw + 1.256rem, 2.438rem);
+        line-height: clamp(2.113rem, 0.148vw + 2.076rem, 2.194rem);
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: clamp(1.438rem, 0.909vw + 1.21rem, 1.938rem);
+        line-height: clamp(1.744rem, -0.227vw + 1.926rem, 1.869rem);
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: clamp(1.25rem, 0.568vw + 1.108rem, 1.563rem);
+        line-height: clamp(1.406rem, -0.398vw + 1.724rem, 1.625rem);
+    }
+
+    h4 {
+        font-weight: 300;
+        font-size: clamp(1.125rem, 0.227vw + 1.068rem, 1.25rem);
+        line-height: clamp(1.125rem, -0.614vw + 1.616rem, 1.463rem);
+    }
+
+    h5 {
+        font-weight: 300;
+        font-size: clamp(1rem, 0.909vw + 0.773rem, 1.5rem);
+        line-height: clamp(1.3rem, 0.091vw + 1.277rem, 1.35rem);
+    }
+
+    h6,
+    address {
+        font-weight: 300;
+        font-size: clamp(0.813rem, 0.114vw + 0.784rem, 0.875rem);
+        line-height: clamp(0.788rem, -0.489vw + 1.178rem, 1.056rem);
+    }
+}
+
+@layer utilities {
+    .event-tag {
+        @apply font-light text-sm before:content-['#'] before:text-primary-100
+    }
+
+    /* Clips a container to a hexagon */
+    .hexagon {
+        clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    }
+
+    /* Conrolls the tabs of a tab collection */
+    .tab [type=radio] {
+        @apply hidden
+    }
+
+    [type=radio]:checked~label {
+        @apply w-fit mx-auto bg-primary-100 text-light-100 rounded-t-lg z-10 drop-shadow-md
+    }
+
+    [type=radio]:checked~label~.tab-content {
+        @apply opacity-100
+    }
+
+}

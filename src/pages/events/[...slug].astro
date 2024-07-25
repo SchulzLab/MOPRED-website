@@ -1,0 +1,17 @@
+---
+import getAllCollections from "../../utils/getAllCollections";
+
+export async function getStaticPaths() {
+    const collections = ["symposia", "hackathons"];
+    const blogEntries = await getAllCollections(collections);
+    return blogEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Content />

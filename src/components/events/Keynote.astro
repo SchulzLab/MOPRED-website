@@ -1,0 +1,39 @@
+---
+// Import built-in components
+import { Image } from "astro:assets";
+
+export interface Props {
+    cardImgSrc: string;
+    cardImgAlt?: string;
+    name: string;
+    institution: string;
+}
+
+const { cardImgSrc, cardImgAlt = "", name, institution } = Astro.props;
+---
+
+<!-- Keynote card that displays one keynote speaker with img, name and institution -->
+<div
+    class="relative max-w-fit overflow-hidden flex-[0_1_30%] rounded-lg shadow-md border-4 border-primary-200"
+>
+    <div>
+        <Image
+            src={cardImgSrc}
+            alt={cardImgAlt}
+            width={350}
+            height={350}
+            quality={80}
+            class="object-fill"
+            loading="eager"
+        />
+    </div>
+    <div class="p-2 bg-primary-200">
+        <span
+            class="block text-xs font-medium tracking-widest uppercase text-primary-300"
+            >{institution}</span
+        >
+        <h6 class="text-base font-semibold tracking-wide text-light-100">
+            {name}
+        </h6>
+    </div>
+</div>
