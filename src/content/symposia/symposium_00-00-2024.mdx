@@ -1,30 +1,38 @@
 ---
-draft: true
+draft: false
 layout: ../../layouts/EventPage.astro
-publishedDate: 2024-00-00
+publishedDate: 2024-08-03
 eventType: symposium
-eventStart: 2024-00-00 10:00:00
-eventEnd: 2024-00-00 18:00:00
-eventLocation: ""
-title: MOPRED Symposium
-excerpt: ""
+eventStart: 2024-10-16 10:00:00
+eventEnd: 2024-10-16 18:00:00
+eventLocation: "Frankfurt University Hospital - Building 22"
+title: MOPRED Symposium - Algorithms and Applications for Multi-Modal Data Integration
+excerpt: "The symposium will gather scientists from various disciplines to present cutting edge research on algorithms and advanced methods for integrating multi-modal data in predictive medicine, featuring lectures, a poster session, and a keynote by Prof. Dr. Ivan Costa from the RWTH Aachen University."
 topics: [""]
-keynotes: []
+keynotes: [[Prof. Dr. Ivan Costa, RWTH Aachen University]]
 organizers: [Florian Buettner, Marcel Schulz]
-tags: [Symposium]
+tags: [Symposium, Multimodal, AI, ML]
 thumbnail:
   src: /symposia/symposium_10-10-2023/thumbnail.jpg
   alt: ""
 registration:
-  registrationDeadline: 2024-00-00 23:59:00
-  registrationURL: ""
-  abstractDeadline: 2024-00-00 23:59:00
-  selectionCommitee: []
-sponsors: ""
+  registrationDeadline: 2024-08-30 23:59:00
+  registrationURL: "https://cpi-online.de/news/registration-for-mopred-symposium-2024/"
+  abstractDeadline: 2024-08-30 23:59:00
+  selectionCommitee: [Andreas Chiocchetti, Florian Buettner, Nadine Flinner, Katharina Imkeller, Marcel Schulz]
+sponsors: "public/symposia/symposium_10-10-2023/sponsors/"
 ---
 
 {/* Component imports */}
 import EventHero from "../../components/events/EventHero.astro"
+import EventProgram from "../../components/events/EventProgram.astro"
+import EventProgramPoint from "../../components/events/EventProgramPoint.astro"
+import EventProgramHeading from "../../components/events/EventProgramHeading.astro"
+import EventTopicCollection from "../../components/events/EventTopicCollection.astro"
+import Topic from "../../components/events/Topic.astro"
+import KeynoteCollection from "../../components/events/KeynoteCollection.astro"
+import Keynote from "../../components/events/Keynote.astro"
+import Registration from "../../components/events/SymposiumRegistration.astro"
 
 <EventHero 
   title={frontmatter.title} 
@@ -36,3 +44,36 @@ import EventHero from "../../components/events/EventHero.astro"
   location={frontmatter.eventLocation}
   organizers={frontmatter.organizers}
 />
+
+
+<EventProgram title="Program" subtitle="Preliminary Overview">
+  <EventProgramHeading title="Coming soon" />
+</EventProgram >
+
+<KeynoteCollection title="Keynote Speaker" subtitle="Multi-modal Integration">
+  <Keynote cardImgSrc="/symposia/symposium_00-00-2024/Costa-Ivan.jpg" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
+</KeynoteCollection>
+
+
+<Registration 
+  regUntil={frontmatter.registration.registrationDeadline} 
+  regUrl={frontmatter.registration.registrationURL}
+  notifUntil={frontmatter.registration.abstractDeadline} 
+  commitee={frontmatter.registration.selectionCommitee}
+  sponsors={frontmatter.sponsors}
+/>
+
+<EventTopicCollection title="Topics" subtitle="Relevant Key Concepts">
+  <Topic icon="iconoir:learning" topic="Representation Learning">
+    Representation learning automates feature extraction from raw data, enhancing model performance in tasks like natural language processing and computer vision.
+  </Topic>
+  <Topic icon="ph:graph" topic="Graph Neural Networks">
+    Graph Neural Networks (GNNs) leverage relationships in graph-structured data to improve tasks like node classification and link prediction by updating node representations based on their neighbors.
+  </Topic>
+  <Topic icon="fa:gears" topic="Mechanistic Models">
+    Mechanistic models describe system behaviors based on fundamental principles, simulating complex dynamics for fields like epidemiology and engineering.
+  </Topic>
+  <Topic icon="foundation:graph-bar" topic="Statistical Approaches">
+    Statistical approaches use mathematical methods to analyze data, making inferences and predictions to uncover patterns and inform decision-making.
+  </Topic>
+</EventTopicCollection>
