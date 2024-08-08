@@ -7,13 +7,30 @@ import HighlightPoint from "../components/HighlightPoint.astro";
 ---
 
 <StandardPage title="Legal Notice">
-    <header class="container max-w-screen-xl md:mx-auto mb-section px-4">
+    <header
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 readable"
+    >
         <h1 class="mb-subheading">Impressum</h1>
         <span>Angaben nach § 5 TMG</span>
     </header>
 
+    <!-- Cookies -->
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 readable"
+    >
+        <h2 class="mb-heading">Hinweis zu Cookies</h2>
+
+        <p>
+            Diese Website verwendet keine Cookies. Wir erheben und speichern
+            keine personenbezogenen Daten über Sie. Alle Inhalte dieser Website
+            können ohne Cookies genutzt werden.
+        </p>
+    </section>
+
     <!-- Provider -->
-    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 readable"
+    >
         <h2 class="mb-heading">Diensteanbieter</h2>
 
         <ul class="mb-8 list-none">
@@ -32,7 +49,7 @@ import HighlightPoint from "../components/HighlightPoint.astro";
             <HighlightPoint pointTitle="Telefon">
                 <div>
                     <ul class="list-none">
-                        <li class="">
+                        <li>
                             <a href="tel:+49-69-798-0">+49-69-798-0</a>
                         </li>
                         <li>
@@ -68,7 +85,9 @@ import HighlightPoint from "../components/HighlightPoint.astro";
             <HighlightPoint pointTitle="Rechtsaufsicht">
                 <div>
                     Hessisches Ministerium für Wissenschaft und Kunst,
-                    <address>Rheinstr. 23-25, 65185 Wiesbaden.</address>
+                    <address class="mt-1">
+                        Rheinstr. 23-25, 65185 Wiesbaden.
+                    </address>
                 </div>
             </HighlightPoint>
 
@@ -100,7 +119,9 @@ import HighlightPoint from "../components/HighlightPoint.astro";
         </div>
     </section>
 
-    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 readable"
+    >
         <h2 class="mb-heading">© Copyright</h2>
 
         <p>
@@ -117,8 +138,10 @@ import HighlightPoint from "../components/HighlightPoint.astro";
         </p>
     </section>
 
-    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
-        <h2 class="mb-heading">Haftungshinweis / Disclaimer</h2>
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 readable"
+    >
+        <h2 class="mb-heading">Haftungshinweis/Disclaimer</h2>
 
         <p>
             Die Goethe-Universität ist als Inhaltsanbieter für die "eigenen
@@ -135,7 +158,9 @@ import HighlightPoint from "../components/HighlightPoint.astro";
         </p>
     </section>
 
-    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 readable"
+    >
         <h2 class="mb-heading">Hinweis zur Problematik von externen Links</h2>
 
         <p>
@@ -165,19 +190,21 @@ import HighlightPoint from "../components/HighlightPoint.astro";
             die Inhalte der "gelinkten" Seite ggf. mit zu verantworten hat,
             mithin haftbar gemacht werden kann. Dies kann man dadurch
             verhindern, indem man sich von diesen Inhalten nachdrücklich
-            distanziert. Vor diesem Hintergrund distanziert sich
-            die&xnbsp;Goethe-Universität hiermit vorsorglich und ausdrücklich
-            von allen Inhalten sämtlicher gelinkter Seiten auf seinen
-            Internetseiten. Sie hat weder Einfluss auf die Gestaltung und die
-            Inhalte der gelinkten Seiten noch hat sie sich diese Inhalte zu
-            eigen gemacht. Diese Erklärung gilt für sämtliche Links und
-            Link-Sammlungen, die zur Zeit bestehen oder in Zukunft bestehen
-            werden.
+            distanziert. Vor diesem Hintergrund distanziert sich die
+            Goethe-Universität hiermit vorsorglich und ausdrücklich von allen
+            Inhalten sämtlicher gelinkter Seiten auf seinen Internetseiten. Sie
+            hat weder Einfluss auf die Gestaltung und die Inhalte der gelinkten
+            Seiten noch hat sie sich diese Inhalte zu eigen gemacht. Diese
+            Erklärung gilt für sämtliche Links und Link-Sammlungen, die zur Zeit
+            bestehen oder in Zukunft bestehen werden.
         </p>
     </section>
 
-    <section class="container max-w-screen-xl md:mx-auto mb-section px-4">
+    <section
+        class="container max-w-screen-xl md:mx-auto mb-section px-4 readable"
+    >
         <h2 class="mb-heading">Speicherung von Zugriffsdaten</h2>
+
         <p>
             Bei Anforderung von Daten aus dem zentralen Informationsangebot der
             Zentralverwaltung der Goethe-Universität im WWW werden keine

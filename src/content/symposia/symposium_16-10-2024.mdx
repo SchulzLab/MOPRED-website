@@ -1,5 +1,6 @@
 ---
 draft: false
+slug: symposium_16-10-2024/
 layout: ../../layouts/EventPage.astro
 publishedDate: 2024-08-03
 eventType: symposium
@@ -45,15 +46,13 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   organizers={frontmatter.organizers}
 />
 
-
 <EventProgram title="Program" subtitle="Preliminary Overview">
-  <EventProgramHeading title="Coming soon" />
+  <EventProgramHeading title="Coming soon..." />
 </EventProgram >
 
 <KeynoteCollection title="Keynote Speaker" subtitle="Multi-modal Integration">
   <Keynote cardImgSrc="/symposia/symposium_00-00-2024/Costa-Ivan.jpg" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
 </KeynoteCollection>
-
 
 <Registration 
   regUntil={frontmatter.registration.registrationDeadline} 

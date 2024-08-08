@@ -112,4 +112,12 @@
         @apply opacity-100
     }
 
+    .readable {
+        @apply font-sans
+    }
+
+    .readable :where(h1, h2, h6) {
+        @apply font-mono
+    }
+
 }

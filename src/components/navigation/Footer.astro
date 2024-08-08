@@ -1,6 +1,8 @@
 ---
 import FooterNavbar from "./FooterNavbar.astro";
 import FooterSocials from "./FooterSocials.astro";
+
+const currentYear: number = new Date(Date.now()).getFullYear();
 ---
 
 <footer
@@ -17,6 +19,6 @@ import FooterSocials from "./FooterSocials.astro";
     </div>
     <span
         class="row-start-2 row-span-1 text-center text-[0.7em] md:text-[1em] lg:text-[1.3em]"
-        >© 2023 MOPRED, All rights reserved.</span
+        >© 2023 - {currentYear} MOPRED, All rights reserved.</span
     >
 </footer>

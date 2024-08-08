@@ -15,7 +15,7 @@ const { sponsors } = Astro.props;
 const allFiles = await extractAllFiles(sponsors);
 ---
 
-<div class="flex items-end justify-center flex-wrap gap-8">
+<div class="flex flex-row items-end justify-center flex-wrap gap-8">
     {
         allFiles.map((sponsor) => (
             <Image
@@ -24,7 +24,7 @@ const allFiles = await extractAllFiles(sponsors);
                 width={200}
                 height={100}
                 quality={80}
-                class="w-full object-scale-down flex-[0_1_25%]"
+                class="object-scale-down flex-[0_1_30%]"
             />
         ))
     }
