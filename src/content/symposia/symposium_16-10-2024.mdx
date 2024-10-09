@@ -46,12 +46,33 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   organizers={frontmatter.organizers}
 />
 
-<EventProgram title="Program" subtitle="Preliminary Overview">
-  <EventProgramHeading title="Coming soon..." />
+<EventProgram title="Program" subtitle="Preliminary Overview" agendaFile="/symposia/symposium_16-10-2024/MOPRED_symposium_agenda.pdf">
+  <EventProgramPoint title="Welcome" timeframe="10:00">
+    Welcome and Opening
+  </EventProgramPoint>
+  <EventProgramHeading title="OMICs Integration + Networks" />
+  <EventProgramPoint timeframe="10:10" title="Scientific Talks">
+    **Talks from:** Markus Joppich, Arber Quoku, Ekaterina Esenkova, Asad Usmani
+  </EventProgramPoint>
+  <EventProgramPoint timeframe="11:30" title="Poster Short Talks" />
+  <EventProgramPoint timeframe="11:55" title="Group Photo" />
+  <EventProgramPoint timeframe="12:05" title="Lunch Break" />
+  <EventProgramPoint timeframe="12:30" title="Lunch + Poster Session" />
+  <EventProgramHeading title="Prediction Models" />
+  <EventProgramPoint timeframe="13:45" title="Scientific Talks">
+    **Talks from:** Robin Mayer, Ingvild Froberg Mathisen, Shamim Ashrafiyan, **Keynote - Ivan Costa**
+  </EventProgramPoint>
+  <EventProgramPoint timeframe="15:20" title="Poster Award" />
+  <EventProgramPoint timeframe="15:25" title="Poster Session and Coffee" />
+  <EventProgramHeading title="Biological Application" />
+  <EventProgramPoint timeframe="16:30" title="Scientific Talks">
+    **Talks from:** Eva Herrmann and Iulia Dahmer, Konstantinos Makris, Zahra Moslehi, Aakanksha Singh
+  </EventProgramPoint>
+  <EventProgramPoint timeframe="17:55" title="Closing" />
 </EventProgram >
 
 <KeynoteCollection title="Keynote Speaker" subtitle="Multi-modal Integration">
-  <Keynote cardImgSrc="/symposia/symposium_00-00-2024/Costa-Ivan.jpg" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
+  <Keynote cardImgSrc="/symposia/symposium_16-10-2024/keynote_costa_ivan.jpg" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
 </KeynoteCollection>
 
 <Registration 
