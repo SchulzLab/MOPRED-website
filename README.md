@@ -10,42 +10,42 @@ The documentation can be found in the corrsponding [Wiki](https://github.com/Sch
 ## Project Strucuture
 
 .
-├── .astro
-├── node_modules
-├── public/
-│   ├── hackathons/
-│   │   ├── hackathon_14-12-2023
-│   │   └── ...
-│   ├── symposia/
-│   │   ├── symposium_10-10-2023
-│   │   └── ...
-│   ├── favicon_128x128_light.svg
-│   ├── logo_160x50_bg_dark.svg
-│   └── logo_horizontal_300x140.svg
-├── src/
-│   ├── assets
-│   ├── components/
-│   │   ├── events
-│   │   ├── navigation
-│   │   ├── AccentBackground.astro
-│   │   └── ...
-│   ├── content/
-│   │   ├── hackathons/
-│   │   │   ├── hackathon_14-12-2023.mdx
-│   │   │   └── ...
-│   │   ├── symposia/
-│   │   │   ├── symposium_10-10-2023.mdx
-│   │   │   └── ...
-│   │   └── config.ts
-│   ├── js
-│   ├── layouts
-│   ├── pages
-│   ├── styles
-│   ├── utils
-│   └── env.d.ts
-├── astro.config.mjs
-├── package-lock.json
-├── package.json
-├── README.md
-├── tailwind.config.mjs
-└── tsconfig.json
+├── .astro  
+├── node_modules  
+├── public/  
+│   ├── hackathons/  
+│   │   ├── hackathon_14-12-2023  
+│   │   └── ...  
+│   ├── symposia/  
+│   │   ├── symposium_10-10-2023  
+│   │   └── ...  
+│   ├── favicon_128x128_light.svg  
+│   ├── logo_160x50_bg_dark.svg  
+│   └── logo_horizontal_300x140.svg  
+├── src/  
+│   ├── assets  
+│   ├── components/  
+│   │   ├── events  
+│   │   ├── navigation  
+│   │   ├── AccentBackground.astro  
+│   │   └── ...  
+│   ├── content/  
+│   │   ├── hackathons/  
+│   │   │   ├── hackathon_14-12-2023.mdx  
+│   │   │   └── ...  
+│   │   ├── symposia/  
+│   │   │   ├── symposium_10-10-2023.mdx  
+│   │   │   └── ...  
+│   │   └── config.ts  
+│   ├── js  
+│   ├── layouts  
+│   ├── pages  
+│   ├── styles  
+│   ├── utils  
+│   └── env.d.ts  
+├── astro.config.mjs  
+├── package-lock.json  
+├── package.json  
+├── README.md  
+├── tailwind.config.mjs  
+└── tsconfig.json  
