@@ -9,7 +9,7 @@ The documentation can be found in the corrsponding [Wiki](https://github.com/Sch
 
 ## Project Strucuture
 
-.
+.  
 ├── .astro  
 ├── node_modules  
 ├── public/  
