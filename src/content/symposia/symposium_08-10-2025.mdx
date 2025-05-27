@@ -1,0 +1,59 @@
+---
+draft: false
+slug: symposium_08-10-2025/
+layout: ../../layouts/EventPage.astro
+publishedDate: 2025-05-28
+eventType: symposium
+eventStart: 2025-10-08 10:00:00
+eventEnd: 2025-10-08 18:00:00
+eventLocation: " Goethe University Frankfurt, Campus Niederrad"
+title: MOPRED Symposium 2025
+excerpt: "This year's MOPRED Symposium will again provide a platform for researchers from various disciplines to discuss advances in multi-modal data integration and their applications in medicine. Participants can expect scientific talks, a poster session, and insights from a keynote speaker."
+topics: [""]
+keynotes: []
+organizers: [Florian Buettner, Marcel Schulz]
+tags: [Symposium, Multimodal, AI, ML]
+thumbnail:
+  src: /symposia/symposium_2025-10-08/thumbnail.jpg
+  alt: ""
+registration:
+  registrationDeadline: 2025-07-29 23:59:00
+  registrationURL: "https://cpi-online.de/news/registration-for-mopred-symposium-2025/"
+  abstractDeadline: 2025-07-29 23:59:00
+  selectionCommitee: []
+sponsors: "public/symposia/symposium_2025-10-08/sponsors/"
+---
+
+{/* Component imports */}
+import EventHero from "../../components/events/EventHero.astro"
+import EventProgram from "../../components/events/EventProgram.astro"
+import EventProgramPoint from "../../components/events/EventProgramPoint.astro"
+import EventProgramHeading from "../../components/events/EventProgramHeading.astro"
+import EventTopicCollection from "../../components/events/EventTopicCollection.astro"
+import Topic from "../../components/events/Topic.astro"
+import KeynoteCollection from "../../components/events/KeynoteCollection.astro"
+import Keynote from "../../components/events/Keynote.astro"
+import Registration from "../../components/events/SymposiumRegistration.astro"
+
+<EventHero 
+  title={frontmatter.title} 
+  tags={frontmatter.tags} 
+  excerpt={frontmatter.excerpt} 
+  heroImgSrc={frontmatter.thumbnail.src} 
+  eventStart={frontmatter.eventStart}
+  eventEnd={frontmatter.eventEnd}
+  location={frontmatter.eventLocation}
+  organizers={frontmatter.organizers}
+/>
+
+<EventProgram title="Program" subtitle="Preliminary Overview" agendaFile="">
+  <EventProgramHeading title="Coming soon..." />
+</EventProgram >
+
+<Registration 
+  regUntil={frontmatter.registration.registrationDeadline} 
+  regUrl={frontmatter.registration.registrationURL}
+  notifUntil={frontmatter.registration.abstractDeadline} 
+  commitee={frontmatter.registration.selectionCommitee}
+  sponsors={frontmatter.sponsors}
+/>

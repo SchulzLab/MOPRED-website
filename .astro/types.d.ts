@@ -136,6 +136,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"hackathons": {
+"hackathon_10-12-2024.mdx": {
+	id: "hackathon_10-12-2024.mdx";
+  slug: "hackathon_10-12-2024/";
+  body: string;
+  collection: "hackathons";
+  data: InferEntrySchema<"hackathons">
+} & { render(): Render[".mdx"] };
 "hackathon_14-12-2023.mdx": {
 	id: "hackathon_14-12-2023.mdx";
   slug: "hackathon_14-12-2023/";
@@ -145,6 +152,13 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "symposia": {
+"symposium_08-10-2025.mdx": {
+	id: "symposium_08-10-2025.mdx";
+  slug: "symposium_08-10-2025/";
+  body: string;
+  collection: "symposia";
+  data: InferEntrySchema<"symposia">
+} & { render(): Render[".mdx"] };
 "symposium_10-10-2023.mdx": {
 	id: "symposium_10-10-2023.mdx";
   slug: "symposium_10-10-2023/";
