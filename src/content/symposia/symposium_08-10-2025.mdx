@@ -6,7 +6,7 @@ publishedDate: 2025-05-28
 eventType: symposium
 eventStart: 2025-10-08 10:00:00
 eventEnd: 2025-10-08 18:00:00
-eventLocation: " Goethe University Frankfurt, Campus Niederrad"
+eventLocation: " Goethe University Hospital Frankfurt - Building 22"
 title: MOPRED Symposium 2025
 excerpt: "This year's MOPRED Symposium will again provide a platform for researchers from various disciplines to discuss advances in multi-modal data integration and their applications in medicine. Participants can expect scientific talks, a poster session, and insights from a keynote speaker."
 topics: [""]
@@ -46,8 +46,24 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   organizers={frontmatter.organizers}
 />
 
-<EventProgram title="Program" subtitle="Preliminary Overview" agendaFile="">
-  <EventProgramHeading title="Coming soon..." />
+<EventProgram title="Program" subtitle="Preliminary Overview" agendaFile="/symposia/symposium_2025-10-08/MOPRED_symposium_agenda_2025.pdf">
+  <EventProgramPoint title="Welcome" timeframe="10:00">
+    Welcome and Opening
+  </EventProgramPoint>
+  <EventProgramHeading title="I - Genomic Embeddings, Knowledge Graphs & Personalized Prediction" />
+  <EventProgramPoint timeframe="10:10" title="Scientific Talks" />
+  <EventProgramPoint timeframe="11:50" title="Poster Short Talks" />
+  <EventProgramPoint timeframe="12:00" title="Group Photo" />
+  <EventProgramPoint timeframe="12:05" title="Lunch Break" />
+  <EventProgramPoint timeframe="12:30" title="Lunch & Poster Session" />
+  <EventProgramHeading title="II - Transcriptome Models" />
+  <EventProgramPoint timeframe="13:45" title="Scientific Talks" />
+  <EventProgramPoint timeframe="14:45" title="Ewa Szczurek Keynote Lecture" />
+  <EventProgramPoint timeframe="15:20" title="Poster Award" />
+  <EventProgramPoint timeframe="15:25" title="Poster Session II & Coffee Break" />
+  <EventProgramHeading title="III - Aging, Cancer Biology & Single-Cell Atlases" />
+  <EventProgramPoint timeframe="16:30" title="Scientific Talks" />
+  <EventProgramPoint timeframe="17:55" title="Closing Remark" />
 </EventProgram >
 
 <Registration 
