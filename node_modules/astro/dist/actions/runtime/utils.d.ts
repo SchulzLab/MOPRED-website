@@ -1,4 +1,0 @@
-export declare const formContentTypes: string[];
-export declare function hasContentType(contentType: string, expected: string[]): boolean;
-export type MaybePromise<T> = T | Promise<T>;
-export declare function getAction(pathKeys: string[]): Promise<(param: unknown) => MaybePromise<unknown>>;
