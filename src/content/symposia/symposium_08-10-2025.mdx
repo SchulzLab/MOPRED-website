@@ -10,7 +10,7 @@ eventLocation: " Goethe University Hospital Frankfurt - Building 22"
 title: MOPRED Symposium 2025
 excerpt: "This year's MOPRED Symposium will again provide a platform for researchers from various disciplines to discuss advances in multi-modal data integration and their applications in medicine. Participants can expect scientific talks, a poster session, and insights from a keynote speaker."
 topics: [""]
-keynotes: []
+keynotes: [["Ewa Szczurek", "Helmholtz Munich"]]
 organizers: [Florian Buettner, Lena Wiese, Marcel Schulz]
 tags: [Symposium, Multimodal, AI, ML]
 thumbnail:
@@ -58,13 +58,20 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   <EventProgramPoint timeframe="12:30" title="Lunch & Poster Session" />
   <EventProgramHeading title="II - Transcriptome Models" />
   <EventProgramPoint timeframe="13:45" title="Scientific Talks" />
-  <EventProgramPoint timeframe="14:45" title="Ewa Szczurek Keynote Lecture" />
+  <EventProgramPoint timeframe="14:45" title="Ewa Szczurek - Keynote Lecture">
+    Hidden Dimensions of Biology:  
+    Latent Models for Multimodal Integration
+  </EventProgramPoint>
   <EventProgramPoint timeframe="15:20" title="Poster Award" />
   <EventProgramPoint timeframe="15:25" title="Poster Session II & Coffee Break" />
   <EventProgramHeading title="III - Aging, Cancer Biology & Single-Cell Atlases" />
   <EventProgramPoint timeframe="16:30" title="Scientific Talks" />
   <EventProgramPoint timeframe="17:55" title="Closing Remark" />
 </EventProgram >
+
+<KeynoteCollection title="Keynote Speaker" subtitle="Multi-modal Integration">
+  <Keynote cardImgSrc="/symposia/symposium_2025-10-08/keynote_ewa_szczurek.png" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
+</KeynoteCollection>
 
 <Registration 
   regUntil={frontmatter.registration.registrationDeadline} 
