@@ -23,7 +23,7 @@ const { eventEntry } = Astro.props;
     <div class="row-start-3 row-span-1">
         <h4>
             {
-                `${eventEntry.data.eventStart.getDate()}.${eventEntry.data.eventStart.getMonth() + 1}.${eventEntry.data.eventStart.getFullYear()}`
+                `${eventEntry.data.eventStart.getUTCDate()}.${eventEntry.data.eventStart.getUTCMonth() + 1}.${eventEntry.data.eventStart.getUTCFullYear()}`
             }
         </h4>
     </div>

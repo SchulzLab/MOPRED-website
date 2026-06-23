@@ -27,13 +27,13 @@ const month = [
         class="hidden md:block md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-1 md:text-center"
     >
         <div class="text-lg text-[1.5rem]">
-            {weekday[eventEntry.data.eventStart.getDay()]}
+            {weekday[eventEntry.data.eventStart.getUTCDay()]}
         </div>
         <div class="mb-3 text-base text-[1.5rem]">
-            {month[eventEntry.data.eventStart.getMonth()]}
+            {month[eventEntry.data.eventStart.getUTCMonth()]}
         </div>
         <div class="text-lg font-bold text-[2rem]">
-            {eventEntry.data.eventStart.getDate()}
+            {eventEntry.data.eventStart.getUTCDate()}
         </div>
     </div>
     <div
@@ -45,7 +45,7 @@ const month = [
         <EventTags tags={eventEntry.data.tags} margin={true} />
         <h6 class="mb-1">
             {
-                `${eventEntry.data.eventStart.getDate()}.${eventEntry.data.eventStart.getMonth() + 1}.${eventEntry.data.eventStart.getFullYear()} @ ${eventEntry.data.eventStart.getHours()}:${(eventEntry.data.eventStart.getMinutes() < 10 ? "0" : "") + eventEntry.data.eventStart.getMinutes()} - ${eventEntry.data.eventEnd.getHours()}:${(eventEntry.data.eventStart.getMinutes() < 10 ? "0" : "") + eventEntry.data.eventStart.getMinutes()}`
+                `${eventEntry.data.eventStart.getUTCDate()}.${eventEntry.data.eventStart.getUTCMonth() + 1}.${eventEntry.data.eventStart.getUTCFullYear()} @ ${eventEntry.data.eventStart.getUTCHours()}:${(eventEntry.data.eventStart.getUTCMinutes() < 10 ? "0" : "") + eventEntry.data.eventStart.getUTCMinutes()} - ${eventEntry.data.eventEnd.getUTCHours()}:${(eventEntry.data.eventEnd.getUTCMinutes() < 10 ? "0" : "") + eventEntry.data.eventEnd.getUTCMinutes()}`
             }
         </h6>
         <h6>{eventEntry.data.eventLocation}</h6>
