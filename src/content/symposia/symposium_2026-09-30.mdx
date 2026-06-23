@@ -1,0 +1,51 @@
+---
+draft: false
+slug: symposium_30-09-2026/
+layout: ../../layouts/EventPage.astro
+publishedDate: 2026-06-23
+eventType: symposium
+eventStart: 2026-09-30 10:00:00
+eventEnd: 2026-09-30 18:00:00
+eventLocation: "TBD"
+title: 4th MOPRED Symposium
+excerpt: "Welcome and thank you for your interest in the 4th MOPRED Symposium 2026. This page provides continuously updated information about the symposium, including the scientific program, keynote and invited speakers, poster sessions, as well as organizational details. The symposium will take place on the 30th of September 2026 and will bring together researchers and academics working at the intersection of medicine, data science, and multimodal research. Further details will be announced in the coming months. We look forward to welcoming you to MOPRED 2026."
+topics: [""]
+keynotes: []
+organizers: [Florian Buettner, Marcel Schulz]
+tags: [Symposium, Multimodal, AI, ML]
+thumbnail:
+  src: /symposia/symposium_2026-09-30/thumbnail.jpg
+  alt: ""
+registration:
+  registrationDeadline: 2026-06-22 23:59:00
+  registrationURL: ""
+  abstractDeadline: 2026-06-22 23:59:00
+  selectionCommitee: []
+sponsors: "public/symposia/symposium_2026-09-30/sponsors/"
+---
+
+{/* Component imports */}
+import EventHero from "../../components/events/EventHero.astro"
+import EventProgram from "../../components/events/EventProgram.astro"
+import EventProgramPoint from "../../components/events/EventProgramPoint.astro"
+import EventProgramHeading from "../../components/events/EventProgramHeading.astro"
+import EventTopicCollection from "../../components/events/EventTopicCollection.astro"
+import Topic from "../../components/events/Topic.astro"
+import KeynoteCollection from "../../components/events/KeynoteCollection.astro"
+import Keynote from "../../components/events/Keynote.astro"
+import Registration from "../../components/events/SymposiumRegistration.astro"
+
+<EventHero
+  title={frontmatter.title}
+  tags={frontmatter.tags}
+  excerpt={frontmatter.excerpt}
+  heroImgSrc={frontmatter.thumbnail.src}
+  eventStart={frontmatter.eventStart}
+  eventEnd={frontmatter.eventEnd}
+  location={frontmatter.eventLocation}
+  organizers={frontmatter.organizers}
+/>
+
+<EventProgram title="Program" subtitle="Preliminary Overview">
+  <EventProgramHeading title="Will be announced..." />
+</EventProgram >

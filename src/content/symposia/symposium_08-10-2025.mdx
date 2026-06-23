@@ -6,7 +6,7 @@ publishedDate: 2025-05-28
 eventType: symposium
 eventStart: 2025-10-08 10:00:00
 eventEnd: 2025-10-08 18:00:00
-eventLocation: " Goethe University Hospital Frankfurt - Building 22"
+eventLocation: "Goethe University Hospital Frankfurt - Building 22"
 title: MOPRED Symposium - Integrative Genomics and Machine Learning for Precision Health
 excerpt: "This year's MOPRED Symposium will again provide a platform for researchers from various disciplines to discuss advances in multi-modal data integration and their applications in medicine. Participants can expect scientific talks, a poster session, and insights from a keynote speaker."
 topics: [""]
@@ -35,11 +35,11 @@ import KeynoteCollection from "../../components/events/KeynoteCollection.astro"
 import Keynote from "../../components/events/Keynote.astro"
 import Registration from "../../components/events/SymposiumRegistration.astro"
 
-<EventHero 
-  title={frontmatter.title} 
-  tags={frontmatter.tags} 
-  excerpt={frontmatter.excerpt} 
-  heroImgSrc={frontmatter.thumbnail.src} 
+<EventHero
+  title={frontmatter.title}
+  tags={frontmatter.tags}
+  excerpt={frontmatter.excerpt}
+  heroImgSrc={frontmatter.thumbnail.src}
   eventStart={frontmatter.eventStart}
   eventEnd={frontmatter.eventEnd}
   location={frontmatter.eventLocation}
@@ -59,7 +59,7 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   <EventProgramHeading title="II - Transcriptome Models" />
   <EventProgramPoint timeframe="13:45" title="Scientific Talks" />
   <EventProgramPoint timeframe="14:45" title="Ewa Szczurek - Keynote Lecture">
-    Hidden Dimensions of Biology:  
+    Hidden Dimensions of Biology:
     Latent Models for Multimodal Integration
   </EventProgramPoint>
   <EventProgramPoint timeframe="15:25" title="Poster Session II & Coffee Break" />
@@ -73,10 +73,10 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   <Keynote cardImgSrc="/symposia/symposium_2025-10-08/keynote_ewa_szczurek.png" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
 </KeynoteCollection>
 
-<Registration 
-  regUntil={frontmatter.registration.registrationDeadline} 
+<Registration
+  regUntil={frontmatter.registration.registrationDeadline}
   regUrl={frontmatter.registration.registrationURL}
-  notifUntil={frontmatter.registration.abstractDeadline} 
+  notifUntil={frontmatter.registration.abstractDeadline}
   commitee={frontmatter.registration.selectionCommitee}
   sponsors={frontmatter.sponsors}
 />
