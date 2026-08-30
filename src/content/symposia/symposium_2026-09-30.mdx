@@ -10,7 +10,7 @@ eventLocation: "TBD"
 title: 4th MOPRED Symposium
 excerpt: "Welcome and thank you for your interest in the 4th MOPRED Symposium 2026. This page provides continuously updated information about the symposium, including the scientific program, keynote and invited speakers, poster sessions, as well as organizational details. The symposium will take place on the 30th of September 2026 and will bring together researchers and academics working at the intersection of medicine, data science, and multimodal research. Further details will be announced in the coming months. We look forward to welcoming you to MOPRED 2026."
 topics: [""]
-keynotes: []
+keynotes: [[Prof. Dr. Tim Hahn, University of Münster]]
 organizers: [Florian Buettner, Marcel Schulz, Lena Wiese]
 tags: [Symposium, Multimodal, AI, ML]
 thumbnail:
@@ -45,6 +45,10 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   location={frontmatter.eventLocation}
   organizers={frontmatter.organizers}
 />
+
+<KeynoteCollection title="Keynote Speaker" subtitle="Exciting Insides">
+  <Keynote cardImgSrc="/symposia/symposium_2026-09-30/keynote.jpg" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
+</KeynoteCollection>
 
 <EventProgram title="Program" subtitle="Preliminary Overview">
   <EventProgramHeading title="Will be announced..." />
