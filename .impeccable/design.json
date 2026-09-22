@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-03T00:00:00.000Z",
+  "title": "Design System: MOPRED",
+  "extensions": {
+    "colorMeta": {
+      "deep-mopred-teal": {
+        "role": "primary",
+        "displayName": "Deep MOPRED Teal",
+        "canonical": "oklch(46.9% 0.106 239.2)",
+        "tonalRamp": ["#000832", "#002c56", "#00507d", "#2576a5", "#519ecf", "#74c1f4", "#94e2ff", "#abf9ff"]
+      },
+      "network-blue": {
+        "role": "primary",
+        "displayName": "Network Blue",
+        "canonical": "oklch(62.4% 0.102 243.0)",
+        "tonalRamp": ["#000731", "#002b56", "#004f7d", "#3175a5", "#599ccf", "#7bbff4", "#9be0ff", "#b2f7ff"]
+      },
+      "pale-cyan": {
+        "role": "primary",
+        "displayName": "Pale Cyan",
+        "canonical": "oklch(92.1% 0.065 213.2)",
+        "tonalRamp": ["#00101b", "#00303c", "#12535f", "#3d7985", "#64a0ad", "#86c3d0", "#a6e3f1", "#bcfbff"]
+      },
+      "cool-mist": {
+        "role": "neutral",
+        "displayName": "Cool Mist",
+        "canonical": "oklch(95.4% 0.015 229.0)",
+        "tonalRamp": ["#050c10", "#212a2f", "#424c51", "#667176", "#8c979d", "#aeb9bf", "#cedadf", "#e5f1f7"]
+      },
+      "muted-slate": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "oklch(64.3% 0.016 231.3)",
+        "tonalRamp": ["#050c11", "#212a2f", "#424c52", "#667176", "#8c979d", "#aeb9c0", "#cedae0", "#e4f1f7"]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": ["#0b0b0b", "#292929", "#4a4a4a", "#6f6f6f", "#959595", "#b7b7b7", "#d7d7d7", "#eeeeee"]
+      },
+      "soft-white": {
+        "role": "neutral",
+        "displayName": "Soft White",
+        "canonical": "oklch(97.0% 0.000 89.9)",
+        "tonalRamp": ["#0b0b0b", "#292929", "#4a4a4a", "#6f6f6f", "#959595", "#b7b7b7", "#d7d7d7", "#eeeeee"]
+      },
+      "ink-black": {
+        "role": "neutral",
+        "displayName": "Ink Black",
+        "canonical": "oklch(0.0% 0.000 0.0)",
+        "tonalRamp": ["#0b0b0b", "#292929", "#4a4a4a", "#6f6f6f", "#959595", "#b7b7b7", "#d7d7d7", "#eeeeee"]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(48.5% 0.000 89.9)",
+        "tonalRamp": ["#0b0b0b", "#292929", "#4a4a4a", "#6f6f6f", "#959595", "#b7b7b7", "#d7d7d7", "#eeeeee"]
+      }
+    },
+    "typographyMeta": {
+      "heading-large": { "displayName": "H1 / Hero", "purpose": "Page and hero titles." },
+      "heading-medium": { "displayName": "H2 / Section", "purpose": "Section titles." },
+      "eyebrow": { "displayName": "H4 / Eyebrow", "purpose": "Uppercase kicker labels above headings, tinted Network Blue." },
+      "body": { "displayName": "Body (monospace)", "purpose": "Default body text sitewide." },
+      "readable-body": { "displayName": "Body (readable/sans)", "purpose": "Long-form prose inside .readable containers (About, Legal Notice)." },
+      "label": { "displayName": "H6 / Fine print", "purpose": "Timestamps, addresses, event metadata lines." }
+    },
+    "shadows": [
+      { "name": "interactive-lift", "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)", "purpose": "Tailwind shadow-md; marks buttons, cards, and highlight boxes as interactive or notable. Deliberately sparing per the current flat-by-default baseline." },
+      { "name": "badge-lift", "value": "drop-shadow-lg", "purpose": "Lifts the hexagon icon badge off the page." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default call-to-action button; scales down on press, shifts to Deep MOPRED Teal on hover.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\"><span>Learn More</span><svg class=\"ds-btn-icon\" viewBox=\"0 0 448 512\" width=\"20\" height=\"20\"><path fill=\"currentColor\" d=\"M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; width: fit-content; padding: 8px 24px; border-radius: 4px; background: #b3f1ff; color: #000; font-weight: 700; text-decoration: none; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); transition: background-color 0.2s, color 0.2s, transform 0.15s; } .ds-btn-primary:hover { background: #00618f; color: #fff; } .ds-btn-primary:active { transform: scale(0.9); } .ds-btn-icon { margin-left: 8px; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Inline metadata label with the hashtag prefix convention.",
+      "html": "<span class=\"ds-tag\">Symposium</span>",
+      "css": ".ds-tag { font-weight: 300; font-size: 0.875rem; color: #000; } .ds-tag::before { content: '#'; color: #b3f1ff; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header navigation link; underline grows from 0 to full width on hover, stays full width when active.",
+      "html": "<a href=\"#\" class=\"ds-nav-link\">Events</a>",
+      "css": ".ds-nav-link { position: relative; color: #fff; font-weight: 400; text-decoration: none; padding-bottom: 4px; } .ds-nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: #f5f5f5; transition: width 0.3s ease; } .ds-nav-link:hover::after { width: 100%; } .ds-nav-link.is-active::after { width: 100%; }"
+    },
+    {
+      "name": "Timeline Card",
+      "kind": "card",
+      "refersTo": "card-timeline",
+      "description": "History/timeline entry, alternating left/right along a connector line.",
+      "html": "<div class=\"ds-timeline-card\"><h6 class=\"ds-timeline-date\">10.10.2023</h6><h3 class=\"ds-timeline-title\">First Symposium</h3><p class=\"ds-timeline-body\">Over 100 researchers joined the first MOPRED symposium in Frankfurt.</p></div>",
+      "css": ".ds-timeline-card { background: #00618f; color: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); } .ds-timeline-date { font-size: 0.875rem; font-weight: 300; margin-bottom: 0.5rem; } .ds-timeline-title { font-weight: 600; margin-bottom: 1rem; } .ds-timeline-body { line-height: 1.2; text-align: justify; }"
+    },
+    {
+      "name": "Highlight Detail Box",
+      "kind": "card",
+      "refersTo": "highlight-box",
+      "description": "Icon + text metadata panel, e.g. event date/location on an event hero.",
+      "html": "<div class=\"ds-highlight-box\"><div class=\"ds-highlight-row\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 448 512\"><path fill=\"#00618f\" d=\"M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192z\"/></svg><span>30.09.2026, 10:00 - 18:00</span></div><div class=\"ds-highlight-row\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 384 512\"><path fill=\"#00618f\" d=\"M172.3 501.7C27 291 0 269.4 0 192C0 86 86 0 192 0S384 86 384 192c0 77.4-27 99-172.3 309.7c-9.5 13.8-29.9 13.8-39.4 0zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z\"/></svg><span>Frankfurt am Main</span></div></div>",
+      "css": ".ds-highlight-box { width: fit-content; padding: 12px; display: flex; flex-direction: column; gap: 8px; border-radius: 8px; background: #e6f2f8; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); } .ds-highlight-row { display: flex; align-items: center; gap: 16px; }"
+    },
+    {
+      "name": "Hexagon Icon Badge",
+      "kind": "custom",
+      "refersTo": "hexagon-badge",
+      "description": "Signature hexagonal clip-path icon container; the system's Molecular Network motif.",
+      "html": "<div class=\"ds-hex-badge\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 512 512\"><path fill=\"#fff\" d=\"M272 96c-78.6 0-144 65.4-144 144s65.4 144 144 144 144-65.4 144-144S350.6 96 272 96z\"/></svg></div>",
+      "css": ".ds-hex-badge { width: 5rem; height: 6.25rem; display: flex; align-items: center; justify-content: center; background: #4b8ec0; clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%); filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.08)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Molecular Network",
+    "overview": "MOPRED presents itself as a structural, data-connective system rather than a marketing surface: monospace type reads like output from a research instrument, hexagonal icon badges echo molecular/lattice geometry, and a literal connector-and-node timeline traces the consortium's history as a network of linked events. The system is precise but not cold — buttons compress on press, navigation links grow an underline on hover, and section headers alternate between left- and right-aligned compositions rather than settling into a single rigid grid. It reads as a working scientific tool built by and for a collaborative research community, not a generic institutional brochure.\n\nThe system deliberately avoids the generic corporate/SaaS register: no soft gradient hero banners, no interchangeable stock-photo blue-and-white dashboards. Where imagery appears (hero photo, graphical abstract), it sits inside precise rounded containers rather than bleeding into decorative backgrounds.",
+    "keyCharacteristics": [
+      "Monospace-first typography, with a deliberate serif/sans switch (.readable) for long-form prose sections",
+      "Hexagonal icon badges as the system's signature geometric motif",
+      "Hashtag-prefixed tags and labels (#Symposium, #OrganizerName) used as a recurring metadata convention",
+      "A literal node-and-connector timeline for chronological/history content",
+      "Tactile, responsive micro-interactions on every actionable element",
+      "Deliberately asymmetric section headers (right-aligned on desktop) rather than a single centered convention"
+    ],
+    "rules": [
+      { "name": "The Hashtag Rule", "body": "Any place metadata is listed inline — event tags, organizer names, topic lists — is prefixed with a Pale Cyan #. It is the system's consistent way of marking \"this is a label, not prose.\"", "section": "colors" },
+      { "name": "The Readable Override Rule", "body": "Inside a .readable container, body text switches to the sans-serif stack for comfortable long-form reading, but h1, h2, and h6 stay on the monospace stack — headings keep the system's identity even where prose softens.", "section": "typography" },
+      { "name": "The Semantic Spacing Rule", "body": "Vertical spacing is chosen by semantic role (mb-section, mb-heading, mb-paragraph, ...) via CSS custom properties, not by raw Tailwind spacing scale numbers — new layout work should extend this named scale rather than reaching for arbitrary spacing values.", "section": "layout" }
+    ],
+    "dos": [
+      "Do prefix inline metadata (tags, organizer names, topic labels) with a Pale Cyan # (the Hashtag Rule).",
+      "Do give every interactive element a tactile reaction on press/hover (button active:scale-90, nav underline growth) — nothing should feel visually static when touched.",
+      "Do use the hexagon clip-path exclusively for icon badges; it is the system's one signature non-rectangular shape and loses its meaning if applied broadly.",
+      "Do use the named spacing scale (mb-section, mb-heading, etc.) for vertical rhythm rather than arbitrary spacing utilities.",
+      "Do keep headings on the monospace stack even inside .readable long-form sections (the Readable Override Rule)."
+    ],
+    "donts": [
+      "Don't default to a generic corporate/SaaS look — no soft gradient hero banners, no interchangeable stock-photo dashboards; this was explicitly named as an anti-reference.",
+      "Don't apply heavy, ambient, or decorative shadows everywhere — elevation stays a deliberate signal, even as the system moves toward \"a bit more depth\" in future passes.",
+      "Don't turn tags/labels into pill-shaped chips with background fills; the hashtag-prefixed plain-text convention is the established pattern.",
+      "Don't center every section header uniformly; the established rhythm alternates left-aligned (mobile) and right-aligned (desktop) headers rather than defaulting to center."
+    ]
+  }
+}
