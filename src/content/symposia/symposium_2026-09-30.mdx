@@ -50,8 +50,26 @@ import Registration from "../../components/events/SymposiumRegistration.astro"
   <Keynote cardImgSrc="/symposia/symposium_2026-09-30/keynote.jpg" name={frontmatter.keynotes[0][0]} institution={frontmatter.keynotes[0][1]} />
 </KeynoteCollection>
 
-<EventProgram title="Program" subtitle="Preliminary Overview">
-  <EventProgramHeading title="Will be announced..." />
+<EventProgram title="Program" subtitle="Preliminary Overview" agendaFile="/symposia/symposium_2026-09-30/symposium_agenda_2026.pdf">
+  <EventProgramPoint title="Welcome" timeframe="10:00">
+    Welcome and Opening
+  </EventProgramPoint>
+  <EventProgramHeading title="Session I - From Prediction to Multiomic Integration" />
+  <EventProgramPoint timeframe="10:10" title="Scientific Talks" />
+  <EventProgramPoint timeframe="11:40" title="Poster Short Talks" />
+  <EventProgramPoint timeframe="12:00" title="Group Photo" />
+  <EventProgramPoint timeframe="12:05" title="Lunch Break" />
+  <EventProgramPoint timeframe="12:30" title="Lunch & Poster Session" />
+  <EventProgramHeading title="Session II - From Images to Patients" />
+  <EventProgramPoint timeframe="13:45" title="Scientific Talks" />
+  <EventProgramPoint timeframe="14:45" title="Tim Hahn - Keynote Lecture">
+    From Prediction to Control – Dynamical Systems in Psychiatry
+  </EventProgramPoint>
+  <EventProgramPoint timeframe="15:25" title="Poster Session II & Coffee Break" />
+  <EventProgramHeading title="Session III - Single-Cell Atlases" />
+  <EventProgramPoint timeframe="16:30" title="Scientific Talks" />
+  <EventProgramPoint timeframe="17:10" title="Award Ceremony & Final Remarks" />
+  <EventProgramPoint timeframe="18:30" title="Dinner (self-funded)" />
 </EventProgram >
 
 <Registration
